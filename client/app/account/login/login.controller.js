@@ -31,5 +31,5 @@ class LoginController {
   }
 }
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .controller('LoginController', LoginController);

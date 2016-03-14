@@ -41,5 +41,5 @@ class SignupController {
   }
 }
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .controller('SignupController', SignupController);

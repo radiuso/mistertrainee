@@ -30,7 +30,7 @@ class MainController {
   }
 }
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .controller('MainController', MainController);
 
 })();

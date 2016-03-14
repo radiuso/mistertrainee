@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .directive('footer', function () {
     return {
       templateUrl: 'components/footer/footer.html',

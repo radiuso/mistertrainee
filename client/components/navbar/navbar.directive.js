@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

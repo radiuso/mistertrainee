@@ -72,10 +72,6 @@ module.exports = function (grunt) {
         ],
         tasks: ['injector:scripts']
       },
-      injectCss: {
-        files: ['<%= yeoman.client %>/{app,components}/**/*.css'],
-        tasks: ['injector:css']
-      },
       mochaTest: {
         files: ['<%= yeoman.server %>/**/*.{spec,integration}.js'],
         tasks: ['env:test', 'mochaTest']
@@ -311,7 +307,7 @@ module.exports = function (grunt) {
     // `server/config/environment/shared.js`
     ngconstant: {
       options: {
-        name: 'radiusApp.constants',
+        name: 'mtApp.constants',
         dest: '<%= yeoman.client %>/app/app.constant.js',
         deps: [],
         wrap: true,
@@ -330,7 +326,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'radiusApp',
+        module: 'mtApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

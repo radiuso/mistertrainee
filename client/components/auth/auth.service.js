@@ -183,7 +183,7 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
   return Auth;
 }
 
-angular.module('radiusApp.auth')
+angular.module('mtApp.auth')
   .factory('Auth', AuthService);
 
 })();

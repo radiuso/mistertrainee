@@ -14,7 +14,7 @@ class AdminController {
   }
 }
 
-angular.module('radiusApp.admin')
+angular.module('mtApp.admin')
   .controller('AdminController', AdminController);
 
 })();

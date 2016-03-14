@@ -53,7 +53,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('radiusApp.util')
+angular.module('mtApp.util')
   .factory('Util', UtilService);
 
 })();

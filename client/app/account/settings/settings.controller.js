@@ -27,5 +27,5 @@ class SettingsController {
   }
 }
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .controller('SettingsController', SettingsController);

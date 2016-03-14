@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('radiusApp.util', []);
+angular.module('mtApp.util', []);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('radiusApp.admin', [
-  'radiusApp.auth',
+angular.module('mtApp.admin', [
+  'mtApp.auth',
   'ui.router'
 ]);

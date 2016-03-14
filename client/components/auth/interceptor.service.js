@@ -26,7 +26,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   };
 }
 
-angular.module('radiusApp.auth')
+angular.module('mtApp.auth')
   .factory('authInterceptor', authInterceptor);
 
 })();

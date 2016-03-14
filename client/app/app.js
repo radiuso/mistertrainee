@@ -1,15 +1,16 @@
 'use strict';
 
-angular.module('radiusApp', [
-  'radiusApp.auth',
-  'radiusApp.admin',
-  'radiusApp.constants',
+angular.module('mtApp', [
+  'mtApp.auth',
+  'mtApp.admin',
+  'mtApp.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'validation.match'
+  'validation.match',
+  'ngMaterial'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('radiusApp.admin')
+angular.module('mtApp.admin')
   .config(function($stateProvider) {
     $stateProvider
       .state('admin', {

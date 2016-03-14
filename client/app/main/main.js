@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

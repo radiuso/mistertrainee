@@ -21,7 +21,7 @@ function UserResource($resource) {
   });
 }
 
-angular.module('radiusApp.auth')
+angular.module('mtApp.auth')
   .factory('User', UserResource);
 
 })();

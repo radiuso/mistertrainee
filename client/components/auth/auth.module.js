@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('radiusApp.auth', [
-  'radiusApp.constants',
-  'radiusApp.util',
+angular.module('mtApp.auth', [
+  'mtApp.constants',
+  'mtApp.util',
   'ngCookies',
   'ui.router'
 ])

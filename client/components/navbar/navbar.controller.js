@@ -3,7 +3,7 @@
 class NavbarController {
   //start-non-standard
   menu = [{
-    'title': 'Home',
+    'title': 'Mister Trainee',
     'state': 'main'
   }];
 
@@ -17,5 +17,5 @@ class NavbarController {
   }
 }
 
-angular.module('radiusApp')
+angular.module('mtApp')
   .controller('NavbarController', NavbarController);

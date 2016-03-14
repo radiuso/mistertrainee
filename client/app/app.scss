@@ -1,10 +1,12 @@
-$fa-font-path: "../bower_components/font-awesome/fonts";
-@import '../bower_components/font-awesome/scss/font-awesome';
+@import 'variables';
+@import '../bower_components/mdi/scss/materialdesignicons';
 
 /**
  * App-wide Styles
  */
-
+.mdi {
+  font-size: $mdi-font-size-base;
+}
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -21,6 +23,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 // Component styles are injected through grunt
 // injector
+@import '_variables.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';
