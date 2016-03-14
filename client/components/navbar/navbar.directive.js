@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mistertraineeApp')
+angular.module('radiusApp')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

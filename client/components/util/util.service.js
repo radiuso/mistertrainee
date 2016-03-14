@@ -53,7 +53,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('mistertraineeApp.util')
+angular.module('radiusApp.util')
   .factory('Util', UtilService);
 
 })();

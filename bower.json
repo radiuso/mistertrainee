@@ -1,5 +1,5 @@
 {
-  "name": "mistertrainee",
+  "name": "radius",
   "version": "0.0.0",
   "dependencies": {
     "angular": "~1.4.0",
@@ -10,7 +10,9 @@
     "angular-sanitize": "~1.4.0",
     "font-awesome": ">=4.1.0",
     "lodash": "~2.4.1",
+    "angular-socket-io": "~0.7.0",
     "angular-ui-router": "~0.2.15",
+    "angular-validation-match": "~1.5.2",
     "lumx": "^0.3.96"
   },
   "devDependencies": {

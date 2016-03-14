@@ -10,9 +10,12 @@ class NavbarController {
   isCollapsed = true;
   //end-non-standard
 
-  constructor() {
-    }
+  constructor(Auth) {
+    this.isLoggedIn = Auth.isLoggedIn;
+    this.isAdmin = Auth.isAdmin;
+    this.getCurrentUser = Auth.getCurrentUser;
+  }
 }
 
-angular.module('mistertraineeApp')
+angular.module('radiusApp')
   .controller('NavbarController', NavbarController);

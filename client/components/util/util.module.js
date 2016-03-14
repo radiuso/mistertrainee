@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('mistertraineeApp.util', []);
+angular.module('radiusApp.util', []);

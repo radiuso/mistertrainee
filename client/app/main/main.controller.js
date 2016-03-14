@@ -4,12 +4,17 @@
 
 class MainController {
 
-  constructor($http) {
+  constructor($http, $scope, socket) {
     this.$http = $http;
     this.awesomeThings = [];
 
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
+      socket.syncUpdates('thing', this.awesomeThings);
+    });
+
+    $scope.$on('$destroy', function() {
+      socket.unsyncUpdates('thing');
     });
   }
 
@@ -25,7 +30,7 @@ class MainController {
   }
 }
 
-angular.module('mistertraineeApp')
+angular.module('radiusApp')
   .controller('MainController', MainController);
 
 })();

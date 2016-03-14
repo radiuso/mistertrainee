@@ -6,6 +6,7 @@
 'use strict';
 import sqldb from '../sqldb';
 var Thing = sqldb.Thing;
+var User = sqldb.User;
 
 Thing.sync()
   .then(() => {
@@ -42,3 +43,22 @@ Thing.sync()
     }]);
   });
 
+User.sync()
+  .then(() => User.destroy({ where: {} }))
+  .then(() => {
+    User.bulkCreate([{
+      provider: 'local',
+      name: 'Test User',
+      email: 'test@example.com',
+      password: 'test'
+    }, {
+      provider: 'local',
+      role: 'admin',
+      name: 'Admin',
+      email: 'admin@example.com',
+      password: 'admin'
+    }])
+    .then(() => {
+      console.log('finished populating users');
+    });
+  });

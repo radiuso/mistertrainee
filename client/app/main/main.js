@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mistertraineeApp')
+angular.module('radiusApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

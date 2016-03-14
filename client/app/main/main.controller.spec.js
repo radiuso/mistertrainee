@@ -3,8 +3,9 @@
 describe('Controller: MainController', function() {
 
   // load the controller's module
-  beforeEach(module('mistertraineeApp'));
+  beforeEach(module('radiusApp'));
   beforeEach(module('stateMock'));
+  beforeEach(module('socketMock'));
 
   var scope;
   var MainController;
