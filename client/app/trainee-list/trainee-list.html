@@ -1,0 +1,17 @@
+<md-container>
+  <md-list class="bg-color-grey-50">
+    <md-subheader class="md-no-sticky">Trainees</md-subheader>
+    <md-list-item ng-repeat="trainee in vm.trainees" class="noright">
+      <img alt="{{ trainee.name }}" ng-src="{{ trainee.img }}" class="md-avatar" />
+      <p>{{ trainee.name }} - {{ trainee.nickname }}</p>
+
+      <md-button ui-sref="trainee({id: {{trainee._id}} })" class="md-icon-button">
+         <md-icon aria-label="Profil" class="fa fa-info-circle"></md-icon>
+      </md-button>
+
+      <rd-thumbs-up ng-click="vm.vote(trainee)" class="md-icon-button">
+      </rd-thumbs-up>
+
+    </md-list-item>
+  </md-list>
+</md-container>

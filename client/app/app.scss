@@ -1,12 +1,16 @@
 @import 'variables';
-@import '../bower_components/mdi/scss/materialdesignicons';
+@import '../bower_components/font-awesome/scss/font-awesome';
+@import '../bower_components/sass-material-colors/sass/sass-material-colors';
+@import '../bower_components/sass-material-colors/sass/sass-material-colors-classes';
 
 /**
  * App-wide Styles
  */
-.mdi {
-  font-size: $mdi-font-size-base;
+
+.fa {
+  font-size: $fa-font-size-base;
 }
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -21,10 +25,21 @@
   }
 }
 
+body {
+  background-image: url("/assets/images/school.png");
+  background-repeat: repeat;
+
+}
+
 // Component styles are injected through grunt
 // injector
+@import '_utils.scss';
 @import '_variables.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'trainee-list/trainee-list.scss';
+@import 'trainee/trainee.scss';
+@import '../components/animocons/animocons.scss';
+@import '../components/animocons/rd-thumbs-up/rd-thumbs-up.scss';
 @import '../components/footer/footer.scss';
 // endinjector

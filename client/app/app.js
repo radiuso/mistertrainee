@@ -10,6 +10,7 @@ angular.module('mtApp', [
   'btford.socket-io',
   'ui.router',
   'validation.match',
+  'ngResource',
   'ngMaterial'
 ])
   .config(function($urlRouterProvider, $locationProvider) {

@@ -7,6 +7,23 @@
 import sqldb from '../sqldb';
 var Thing = sqldb.Thing;
 var User = sqldb.User;
+var Trainee = sqldb.Trainee;
+
+Trainee.sync()
+  .then(() => {
+    return Trainee.destroy({ where: {}});
+  })
+  .then(() => {
+    return Trainee.bulkCreate([{
+      name: "Stagiaire",
+      nickname: 'LE stagiaire',
+      year: 2016,
+      active: true
+    }]);
+  })
+  .then(() => {
+    console.log('finished populating trainnees');
+  });
 
 Thing.sync()
   .then(() => {

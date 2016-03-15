@@ -1,0 +1,14 @@
+md-list-item {
+  > p {
+    flex: 0.85;
+  }
+  .fa, .fa:before {
+    font-size: 1em;
+  }
+  md-icon {
+    font-size: 30px;
+  }
+  md-icon-button {
+    font-size: 4em;
+  }
+}
