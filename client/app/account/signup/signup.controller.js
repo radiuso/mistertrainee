@@ -10,6 +10,8 @@ class SignupController {
   constructor(Auth, $state) {
     this.Auth = Auth;
     this.$state = $state;
+
+    this.user = this.Auth.getCurrentUser();
   }
 
   register(form) {
