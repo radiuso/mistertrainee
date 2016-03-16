@@ -19,6 +19,11 @@ Trainee.sync()
       nickname: 'LE stagiaire',
       year: 2016,
       active: true
+    }, {
+      name: "Marc",
+      nickname: 'Un stagiaire',
+      year: 2016,
+      active: true
     }]);
   })
   .then(() => {

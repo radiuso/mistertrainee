@@ -54,8 +54,10 @@ function removeEntity(res) {
       return entity.destroy()
         .then(() => {
           res.status(204).end();
+          return entity;
         });
     }
+    return null;
   };
 }
 

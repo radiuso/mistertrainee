@@ -2,5 +2,9 @@
 
 angular.module('mtApp')
   .service('trainee', function ($resource) {
-    return $resource('/api/trainees/:id');
+    return $resource('/api/trainees/:id', { id: '@_id' }, {
+      update: {
+        method: 'PUT' // this method issues a PUT request
+      }
+    });
   });

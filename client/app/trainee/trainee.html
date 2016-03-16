@@ -1,1 +1,46 @@
-<div>This is the trainee view.</div>
+<div class="form-container md-whiteframe-z1 bg-color-grey-50" flex="50" flex-offset="25">
+  <form name="projectForm" ng-submit="vm.submit()">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span ng-show="vm.isNew" class="md-headline">Add a Trainee</span>
+          <span ng-hide="vm.isNew" class="md-headline">Update a Trainee</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <md-input-container class="md-block">
+          <label>Name</label>
+          <input required type="text" name="name" ng-model="vm.traineeForm.name" />
+          <div ng-messages="vm.traineeForm.name.$error" multiple>
+            <div ng-message="required">
+              The fucking name is required.
+            </div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Nickname</label>
+          <input required type="text" name="nickname" ng-model="vm.traineeForm.nickname" />
+          <div ng-messages="vm.traineeForm.nickname.$error" multiple>
+            <div ng-message="required">
+              He is that bad ?
+            </div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Year</label>
+          <input required type="number" name="year" ng-model="vm.traineeForm.year" />
+          <div ng-messages="vm.traineeForm.year.$error" multiple>
+            <div ng-message="required">
+              Give me a fucking year !
+            </div>
+          </div>
+        </md-input-container>
+      </md-card-content>
+
+      <md-card-actions layout="row" layout-align="center">
+        <md-button type="submit" class="md-raised md-primary">Haze</md-button>
+        <md-button ng-hide="vm.isNew" ng-click="vm.delete()" type="button" class="md-raised md-accent">Delete</md-button>
+      </md-card-actions>
+    </md-card>
+  </form>
+</div>

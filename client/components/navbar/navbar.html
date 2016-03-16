@@ -1,5 +1,5 @@
 <md-toolbar>
-  <div class="md-toolbar-tools">
+  <div class="md-toolbar-tools bg-color-blue-grey-900">
     <md-button class="md-icon-button" aria-label="Settings">
       <md-icon class="fa fa-bars"></md-icon>
     </md-button>
@@ -18,17 +18,17 @@
       </md-button>
       <md-menu-content width="4">
         <md-menu-item ng-hide="nav.isLoggedIn()" ui-sref-active="active">
-          <md-button ui-sref="signup">Sign up</md-button>
+          <md-button ui-sref="signup"><span md-menu-align-target>Sign up</span></md-button>
         </md-menu-item>
         <md-menu-item ng-hide="nav.isLoggedIn()" ui-sref-active="active">
-          <md-button ui-sref="login">Login</md-button>
+          <md-button ui-sref="login"><span md-menu-align-target>Login</span></md-button>
         </md-menu-item>
         <md-menu-item ng-show="nav.isLoggedIn()" ui-sref-active="active">
-          <md-button ui-sref="signup">Paramètres</md-button>
+          <md-button ui-sref="signup"><span md-menu-align-target>Paramètres</span></md-button>
         </md-menu-item>
         <md-menu-divider ng-show="nav.isLoggedIn()"></md-menu-divider>
         <md-menu-item ng-show="nav.isLoggedIn()" ui-sref-active="active">
-          <md-button ui-sref="signup">Logout</md-button>
+          <md-button ui-sref="signup"><span md-menu-align-target>Logout</span></md-button>
         </md-menu-item>
       </md-menu-content>
     </md-menu>
