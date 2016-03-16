@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: TraineeCtrl', function () {
+describe('Controller: TraineesListCtrl', function () {
 
   // load the controller's module
   beforeEach(module('mtApp'));
 
-  var TraineeCtrl, scope;
+  var TraineesCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    TraineeCtrl = $controller('TraineeCtrl', {
+    TraineeListCtrl = $controller('TraineesListCtrl', {
       $scope: scope
     });
   }));

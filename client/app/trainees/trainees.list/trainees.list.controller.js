@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('mtApp')
-  .controller('TraineeListCtrl', function (trainee) {
+  .controller('TraineesListCtrl', function (Trainees) {
     this.trainees = [];
 
-    trainee.query().$promise.then(response => {
+    Trainees.query().$promise.then(response => {
       _.each(response, function(d) {
         if(_.isNil(d.img) || d.img == '') {
           var firstLetter = d.name[0].toLowerCase();

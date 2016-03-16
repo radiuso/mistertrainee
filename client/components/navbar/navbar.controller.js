@@ -7,7 +7,7 @@ class NavbarController {
     'state': 'main'
   }, {
     'title': 'Trainees',
-    'state': 'trainee-list'
+    'state': 'trainees-list'
   }];
 
   isCollapsed = true;

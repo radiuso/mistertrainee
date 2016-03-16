@@ -1,20 +1,19 @@
 'use strict';
 
 angular.module('mtApp')
-  .controller('TraineeCtrl', function ($stateParams, $mdToast, $state, trainee) {
+  .controller('TraineesFormCtrl', function ($stateParams, $mdToast, $state, Trainees) {
     var id = $stateParams.id;
     this.isNew = _.isNil(id) || id === "";
 
     if(!this.isNew) {
-      trainee.get({ id: id }).$promise.then((response) => {
+      Trainees.get({ id: id }).$promise.then((response) => {
         this.traineeForm = response;
-        console.log(response);
       });
     }
 
     this.submit = () => {
       if(this.isNew) {
-        var newTrainee = new trainee();
+        var newTrainee = new Trainees();
         newTrainee.name = this.traineeForm.name;
         newTrainee.nickname = this.traineeForm.nickname;
         newTrainee.year = this.traineeForm.year;
@@ -45,7 +44,7 @@ angular.module('mtApp')
           .textContent('Trainee ' + this.traineeForm.name + ' is deleted');
         $mdToast.show(toast);
 
-        $state.go("trainee-list");
+        $state.go("trainees-list");
       });
     };
   });
