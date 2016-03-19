@@ -1,8 +1,6 @@
 <md-toolbar>
   <div class="md-toolbar-tools bg-color-blue-grey-900">
-    <md-button class="md-icon-button" aria-label="Settings">
-      <md-icon class="fa fa-bars"></md-icon>
-    </md-button>
+    
     <md-button ng-repeat="item in nav.menu" ui-sref="{{item.state}}">
       {{item.title}}
     </md-button>

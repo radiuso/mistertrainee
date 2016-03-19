@@ -1,27 +1,22 @@
-.thing-form {
-  margin: 20px 0;
+@font-face {
+font-family: 'master_of_break';
+src: url('/assets/fonts/master_of_break/master_of_break.otf');
+font-weight: normal;
+font-style: normal;
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
-}
-
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
+.title {
+  font-family: "master_of_break", Times, serif;
   text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  font-size: 5em;
 }
 
-.navbar-text {
-  margin-left: 15px;
+.title-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.vote-for .fa {
+  font-size: 40px;
 }

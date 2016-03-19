@@ -1,30 +1,21 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="main.newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
+<br/>
+<div flex-xs layout="column" layout-align="center center">
+  <img class="title-img" src="/assets/images/panda_mouse.jpg"/>
+  <h1 class="title">Mister - Trainee</h1>
 </div>
 
-<footer></footer>
+<md-content class=' md-center' layout="row" layout-wrap>
+  <md-card  flex="25" flex-xs="100" flex-sm="45" flex-md="30" ng-repeat="item in main.trainees">
+    <md-card-header>
+      <md-card-header-text>
+        <span class="md-title">{{item.name}}</span>
+        <span class="md-subhead">{{item.nickname}}</span>
+        <span class="md-subhead">{{item.vote}}12</span>
+      </md-card-header-text>
+      <md-card-avatar>
+        <rd-thumbs-up ng-click="main.vote(trainee)" class="md-icon-button vote-for"></rd-thumbs-up>
+      </md-card-avatar>
+    </md-card-header>
+    </div>
+  </md-card>
+</md-content>

@@ -20,6 +20,6 @@
     "sass-material-colors": "^0.0.5"
   },
   "resolutions": {
-    "angular": "1.5.1"
+    "angular": "1.5.2"
   }
 }
