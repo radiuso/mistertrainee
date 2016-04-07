@@ -1,6 +1,5 @@
 <div flex-xs layout="row" layout-align="center center">
-  <div class="form-container md-whiteframe-z1 bg-color-grey-50" flex="50" flex-xs="100" flex-sm="80" flex-md="80">
-    <form name="form" ng-submit="vm.register(form)">
+    <form name="form" ng-submit="signup.register(form)">
       <md-card>
         <md-card-title>
           <md-card-title-text>
@@ -10,8 +9,8 @@
         <md-card-content>
           <md-input-container class="md-block">
             <label>Name</label>
-            <input required type="text" name="name" ng-model="vm.user.name" />
-            <div ng-messages="vm.user.name.$error" multiple>
+            <input required type="text" name="name" ng-model="signup.user.name" />
+            <div ng-messages="signup.user.name.$error" multiple>
               <div ng-message="required">
                 A name is required
               </div>
@@ -20,8 +19,8 @@
 
           <md-input-container class="md-block">
             <label>Email</label>
-            <input required type="email" name="email" ng-model="vm.user.email" />
-            <div ng-messages="vm.user.email.$error" multiple>
+            <input required type="email" name="email" ng-model="signup.user.email" />
+            <div ng-messages="signup.user.email.$error" multiple>
               <div ng-message="required">
                 Please enter a valid email.
               </div>
@@ -33,11 +32,11 @@
 
           <md-input-container class="md-block">
             <label>Password</label>
-            <input type="password" name="password" ng-model="vm.user.password"
+            <input type="password" name="password" ng-model="signup.user.password"
               ng-minlength="3"
               required
             />
-            <div ng-messages="vm.user.email.$error" multiple>
+            <div ng-messages="signup.user.email.$error" multiple>
               <div ng-message="required">
                 Please enter a valid password.
               </div>
@@ -49,12 +48,12 @@
 
           <md-input-container class="md-block">
             <label>Confirm Password</label>
-            <input type="password" name="confirmPassword" ng-model="vm.user.confirmPassword"
-              match="vm.user.password"
+            <input type="password" name="confirmPassword" ng-model="signup.user.confirmPassword"
+              match="signup.user.password"
               ng-minlength="3"
               required
             />
-            <div ng-messages="vm.user.confirmPassword.$error" multiple>
+            <div ng-messages="signup.user.confirmPassword.$error" multiple>
               <div ng-message="match">
                 Passwords must match.
               </div>
@@ -63,10 +62,8 @@
         </md-card-content>
 
         <md-card-actions layout="column" layout-align="center">
-          <md-button type="submit" class="md-raised md-primary">Login</md-button>
-          <p>Already an account ? <a ui-sref="signup">Register</a></p>
+          <md-button type="submit" class="md-raised md-primary">Signup</md-button>
         </md-card-actions>
       </md-card>
     </form>
-  </div>
 </div>

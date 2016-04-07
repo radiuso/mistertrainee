@@ -1,16 +1,41 @@
+<md-sidenav
+    class="md-sidenav-right"
+    md-component-id="loginSidenav"
+    md-disable-backdrop
+    md-whiteframe="4">
+  <md-toolbar>
+    <h1 class="md-toolbar-tools">Login</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <login></login>
+  </md-content>
+</md-sidenav>
+<md-sidenav
+    class="md-sidenav-right"
+    md-component-id="signUpSidenav"
+    md-disable-backdrop
+    md-whiteframe="4">
+  <md-toolbar>
+    <h1 class="md-toolbar-tools">SignUp</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <signup></signup>
+  </md-content>
+</md-sidenav>
+
 <md-toolbar>
   <div class="md-toolbar-tools bg-color-blue-grey-900">
-    
     <md-button ng-repeat="item in nav.menu" ui-sref="{{item.state}}">
       {{item.title}}
     </md-button>
-    <md-button ng-show="nav.isAdmin()" ui-sref="admin">Admin</md-button>
+    <md-button ng-show="nav.isAdmin()" ui-sref="admin">User</md-button>
+    <md-button ng-show="nav.isAdmin()" ui-sref="trainees-list">Trainees</md-button>
 
     <span flex></span>
-    <md-button ng-hide="nav.isLoggedIn()" ui-sref="signup">
+    <md-button ng-hide="nav.isLoggedIn()" ng-click="nav.openSignUpSidenav()">
       <span md-menu-align-target>Sign up</span>
     </md-button>
-    <md-button ng-hide="nav.isLoggedIn()" ui-sref="login">
+    <md-button ng-hide="nav.isLoggedIn()" ng-click="nav.openLoginSidenav()">
       <span md-menu-align-target>Login</span>
     </md-button>
 
@@ -21,7 +46,7 @@
       </md-button>
       <md-menu-content width="4">
         <md-menu-item ng-show="nav.isLoggedIn()" ui-sref-active="active">
-          <md-button ui-sref="signup"><span md-menu-align-target>Paramètres</span></md-button>
+          <md-button ui-sref="signup"><span md-menu-align-target>Mon profils</span></md-button>
         </md-menu-item>
         <md-menu-divider ng-show="nav.isLoggedIn()"></md-menu-divider>
         <md-menu-item ng-show="nav.isLoggedIn()" ui-sref-active="active">

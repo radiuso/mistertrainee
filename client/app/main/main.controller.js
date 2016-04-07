@@ -4,7 +4,10 @@
 
 class MainController {
 
-  constructor(Trainees) {
+  constructor(Auth, Trainees, mtImgLetter) {
+    this.Auth = Auth;
+    this.imgProxy = mtImgLetter;
+
     this.trainees = [];
     Trainees.query().$promise.then(response => {
       this.trainees = response;

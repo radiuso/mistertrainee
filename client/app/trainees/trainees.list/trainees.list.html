@@ -6,10 +6,6 @@
       <p>
         <a ui-sref="trainees-form({id: {{trainee._id}} })">{{ trainee.name }} - {{ trainee.nickname }}</a>
       </p>
-
-      <rd-thumbs-up ng-click="vm.vote(trainee)" class="md-icon-button"></rd-thumbs-up>
-      <h1>12</h1>
-      <md-divider md-inset ng-if="!$last"></md-divider>
     </md-list-item>
   </md-list>
 </md-container>

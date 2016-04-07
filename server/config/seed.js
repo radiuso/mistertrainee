@@ -18,11 +18,13 @@ Trainee.sync()
       name: "Stagiaire",
       nickname: 'LE stagiaire',
       year: 2016,
+      vote: 3,
       active: true
     }, {
       name: "Marc",
       nickname: 'Un stagiaire',
       year: 2016,
+      vote: 4,
       active: true
     }]);
   })

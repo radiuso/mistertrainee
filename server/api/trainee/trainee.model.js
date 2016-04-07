@@ -11,6 +11,7 @@ export default function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     nickname: DataTypes.STRING,
     year: DataTypes.INTEGER, // year of the work placement
+    vote: DataTypes.INTEGER,
     active: DataTypes.BOOLEAN
   });
 }

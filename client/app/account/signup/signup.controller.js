@@ -7,10 +7,10 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, mtEvents) {
     this.Auth = Auth;
     this.$state = $state;
-
+    this.mtEvents = mtEvents;
     this.user = this.Auth.getCurrentUser();
   }
 
@@ -25,6 +25,7 @@ class SignupController {
       })
       .then(() => {
         // Account created, redirect to home
+        mtEvents.emmit('signup');
         this.$state.go('main');
       })
       .catch(err => {

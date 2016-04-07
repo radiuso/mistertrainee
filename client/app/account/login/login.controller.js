@@ -7,14 +7,15 @@ class LoginController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, mtEvents) {
     this.Auth = Auth;
     this.$state = $state;
+    this.mtEvents = mtEvents;
   }
 
   login(form) {
     this.submitted = true;
-    console.log(form.$valid);
+    console.log(form.$valid, form);
     if (form.$valid) {
       this.Auth.login({
         email: this.user.email,
@@ -22,6 +23,8 @@ class LoginController {
       })
       .then(() => {
         // Logged in, redirect to home
+        this.mtEvents.emmit('login');
+
         this.$state.go('main');
       })
       .catch(err => {
