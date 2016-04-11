@@ -7,6 +7,7 @@ angular.module('mtApp')
       restrict: 'E',
       link: function(scope, element) {
         element.addClass('footer');
+        element.addClass('bg-color-grey-50');
       }
     };
   });

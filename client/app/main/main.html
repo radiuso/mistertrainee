@@ -5,19 +5,36 @@
 </div>
 
 <md-content class='md-center hidden-flow' layout="row" layout-wrap layout-align="center center">
-  <md-card flex="25" flex-xs="100" flex-sm="45" flex-md="30" ng-repeat="item in main.trainees | orderBy : 'vote' : true">
+  <md-card flex="25" flex-xs="100" flex-sm="45" flex-md="30" ng-repeat="item in main.trainees | orderBy : 'vote' : true"
+    ng-class="{
+      'bg-color-blue-50': item.vote < 10,
+      'bg-color-blue-100': item.vote >= 10,
+      'bg-color-blue-200': item.vote >= 20,
+      'bg-color-orange-300': item.vote >= 40,
+      'bg-color-orange-400': item.vote >= 60,
+      'bg-color-orange-600': item.vote >= 90,
+      'bg-color-red-500': item.vote >= 120,
+      'bg-color-red-600': item.vote >= 180,
+      'bg-color-red-100': item.vote >= 250
+    }">
     <md-card-header>
       <md-card-avatar>
         <img alt="{{ item.name }}" ng-src="{{ main.imgProxy.getFromName(item.name) }}" class="md-user-avatar" />
       </md-card-avatar>
       <md-card-header-text>
         <span class="md-title">{{item.name}} - {{item.nickname}}</span>
-        <span class="md-subhead" ng-if="item.vote < 4">Sous stagiaire</span>
-        <span class="md-subhead" ng-if="item.vote >= 4 && item.vote < 8">Apprentice</span>
-        <span class="md-subhead" ng-if="item.vote >= 8 && item.vote < 12">Jedi</span>
+        <span class="md-subhead" ng-if="item.vote < 10">Trainee Initiate</span>
+        <span class="md-subhead" ng-if="item.vote >= 10 && item.vote < 20">Trainee Padawan</span>
+        <span class="md-subhead" ng-if="item.vote >= 20 && item.vote < 40">Trainee Knight</span>
+        <span class="md-subhead" ng-if="item.vote >= 40 && item.vote < 60">Trainee Master</span>
+        <span class="md-subhead" ng-if="item.vote >= 60 && item.vote < 90">Trainee almost an employee</span>
+        <span class="md-subhead" ng-if="item.vote >= 90 && item.vote < 120">Trainee better than some employees</span>
+        <span class="md-subhead" ng-if="item.vote >= 120 && item.vote < 180">Trainee better than most employees</span>
+        <span class="md-subhead" ng-if="item.vote >= 180 && item.vote < 250">Trainee God</span>
+        <span class="md-subhead" ng-if="item.vote >= 250">Trainee Michalet</span>
       </md-card-header-text>
       <md-card-avatar ng-show="true"> <!-- main.Auth.isAuthenticated() -->
-        <rd-thumbs-up on-check="main.vote(item)" class="md-icon-button vote-for"></rd-thumbs-up>
+        <rd-thumbs-up on-check="main.vote(item)" stroke-color="'#2C7ECC'" class="md-icon-button vote-for"></rd-thumbs-up>
       </md-card-avatar>
       <span class="md-subhead v-align-center">{{item.vote}}</span>
     </md-card-header>
