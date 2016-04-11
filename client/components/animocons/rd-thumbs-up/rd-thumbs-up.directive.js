@@ -6,6 +6,8 @@ angular.module('mtApp')
       templateUrl: 'components/animocons/rd-thumbs-up/rd-thumbs-up.html',
       restrict: 'EA',
       scope: {
+        onCheck:'&',
+        onUncheck: '&'
       },
       link: function (scope, element, attrs) {
         // <button class="icobutton icobutton--thumbs-up"><span class="fa fa-thumbs-up"></span></button>
@@ -13,6 +15,15 @@ angular.module('mtApp')
 
         var delement = element[0];
         var elspan = delement.querySelector('span');
+
+        var tween = new mojs.Tween({
+          repeat:0,
+          duration : 1000,
+          onUpdate: function(progress) {
+            var elasticOutProgress = mojs.easing.elastic.out(progress);
+            elspan.style.WebkitTransform = elspan.style.transform = 'translate3d(' + -50*(1-elasticOutProgress) + '%,0,0)';
+          }
+        });
 
         animocons.Handle(delement, {
     			tweens : [
@@ -99,20 +110,20 @@ angular.module('mtApp')
     					easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
     				}),
     				// icon scale animation
-    				new mojs.Tween({
-    					duration : 1000,
-    					onUpdate: function(progress) {
-    						var elasticOutProgress = mojs.easing.elastic.out(progress);
-    						elspan.style.WebkitTransform = elspan.style.transform = 'translate3d(' + -50*(1-elasticOutProgress) + '%,0,0)';
-    					}
-    				})
+    				tween
     			],
     			onCheck : function() {
     				delement.style.color = '#988ADE';
+            if(_.isFunction(scope.onCheck)) {
+              scope.onCheck();
+            }
             // timeout and uncheck
     			},
     			onUnCheck : function() {
     				delement.style.color = '#C0C1C3';
+            if(_.isFunction(scope.onUncheck)) {
+              scope.onUncheck();
+            }
     			}
     		});
       }

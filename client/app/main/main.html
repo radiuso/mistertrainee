@@ -11,11 +11,13 @@
         <img alt="{{ item.name }}" ng-src="{{ main.imgProxy.getFromName(item.name) }}" class="md-user-avatar" />
       </md-card-avatar>
       <md-card-header-text>
-        <span class="md-title">{{item.name}}</span>
-        <span class="md-subhead">{{item.nickname}}</span>
+        <span class="md-title">{{item.name}} - {{item.nickname}}</span>
+        <span class="md-subhead" ng-if="item.vote < 4">Sous stagiaire</span>
+        <span class="md-subhead" ng-if="item.vote >= 4 && item.vote < 8">Apprentice</span>
+        <span class="md-subhead" ng-if="item.vote >= 8 && item.vote < 12">Jedi</span>
       </md-card-header-text>
       <md-card-avatar ng-show="true"> <!-- main.Auth.isAuthenticated() -->
-        <rd-thumbs-up ng-click="main.vote(trainee)" class="md-icon-button vote-for"></rd-thumbs-up>
+        <rd-thumbs-up on-check="main.vote(item)" class="md-icon-button vote-for"></rd-thumbs-up>
       </md-card-avatar>
       <span class="md-subhead v-align-center">{{item.vote}}</span>
     </md-card-header>

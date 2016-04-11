@@ -44,7 +44,7 @@ angular.module('mtApp')
   				self.options.onCheck();
   				self.timeline.start();
   			}
-  			self.checked = !self.checked;
+  			// self.checked = !self.checked;
   		});
   	}
 

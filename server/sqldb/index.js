@@ -14,6 +14,7 @@ var db = {
 };
 
 // Insert models below
+db.Vote = db.sequelize.import('../api/vote/vote.model');
 db.Trainee = db.sequelize.import('../api/trainee/trainee.model');
 db.Thing = db.sequelize.import('../api/thing/thing.model');
 db.User = db.sequelize.import('../api/user/user.model');
