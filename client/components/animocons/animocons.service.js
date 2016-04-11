@@ -1,5 +1,7 @@
 'use strict';
-
+/**
+* http://tympanus.net/codrops/2016/02/23/icon-animations-powered-by-mo-js/
+**/
 angular.module('mtApp')
   .service('animocons', function () {
   	// taken from mo.js demos

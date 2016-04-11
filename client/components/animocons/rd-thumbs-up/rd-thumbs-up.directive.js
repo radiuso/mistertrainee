@@ -12,95 +12,104 @@ angular.module('mtApp')
         element.addClass('icobutton icobutton--thumbs-up');
 
         var delement = element[0];
-        var el9span = delement.querySelector('span');
-
-    		el9span.style.WebkitTransformOrigin = el9span.style.transformOrigin = '-10% 50%';
+        var elspan = delement.querySelector('span');
 
         animocons.Handle(delement, {
     			tweens : [
     				// burst animation
     				new mojs.Burst({
     					parent: delement,
-    					duration: 1500,
-    					delay: 350,
+    					duration: 600,
     					shape : 'circle',
-    					fill : [ '#988ADE', '#DE8AA0', '#8AAEDE', '#8ADEAD', '#DEC58A', '#8AD1DE' ],
-    					x: '50%',
-    					y: '50%',
-    					opacity: 0.6,
-    					radius: {40:90},
-    					count: 6,
-    					angle: 135,
-    					degree: 90,
+    					fill: '#C0C1C3',
+    					x: '0%',
+    					y: '0%',
+    					childOptions: {
+    						radius: {60:0},
+    						type: 'line',
+    						stroke: '#988ADE',
+    						strokeWidth: 1
+    					},
+    					radius: {80:250},
+    					angle: -90,
+    					count: 1,
     					isRunLess: true,
     					easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
     				}),
     				// burst animation
     				new mojs.Burst({
     					parent: delement,
-    					duration: 1500,
-    					delay: 550,
+    					duration: 600,
     					shape : 'circle',
-    					fill : [ '#988ADE', '#DE8AA0', '#8AAEDE', '#8ADEAD', '#DEC58A', '#8AD1DE' ],
-    					x: '50%',
+    					fill: '#C0C1C3',
+    					x: '0%',
     					y: '50%',
-    					opacity: 0.6,
-    					radius: {40:100},
-    					count: 6,
-    					angle: 45,
-    					degree: -90,
+    					childOptions: {
+    						radius: {60:0},
+    						type: 'line',
+    						stroke: '#988ADE',
+    						strokeWidth: 1
+    					},
+    					radius: {80:200},
+    					angle: -90,
+    					count: 1,
     					isRunLess: true,
     					easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
     				}),
-    				// ring animation
-    				new mojs.Transit({
+    				// burst animation
+    				new mojs.Burst({
     					parent: delement,
-    					duration: 750,
-    					type: 'circle',
-    					radius: {0: 50},
-    					fill: 'transparent',
-    					stroke: '#988ADE',
-    					strokeWidth: {35:0},
-    					opacity: 0.6,
-    					x: '50%',
-    					y: '50%',
+    					duration: 600,
+    					shape : 'circle',
+    					fill: '#C0C1C3',
+    					x: '0%',
+    					y: '100%',
+    					childOptions: {
+    						radius: {60:0},
+    						type: 'line',
+    						stroke: '#988ADE',
+    						strokeWidth: 1
+    					},
+    					radius: {80:250},
+    					angle: -90,
+    					count: 1,
     					isRunLess: true,
-    					easing: mojs.easing.bezier(0, 1, 0.5, 1)
+    					easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
     				}),
-    				// ring animation
-    				new mojs.Transit({
+    				// burst animation
+    				new mojs.Burst({
     					parent: delement,
-    					duration: 750,
-    					delay: 200,
-    					type: 'circle',
-    					radius: {0: 50},
-    					fill: 'transparent',
-    					stroke: '#988ADE',
-    					strokeWidth: {35:0},
-    					opacity: 0.6,
+    					duration: 600,
+    					delay: 150,
+    					shape : 'circle',
+    					fill: '#C0C1C3',
     					x: '50%',
     					y: '50%',
+    					childOptions: {
+    						radius: {30:0},
+    						type: 'line',
+    						stroke: '#988ADE',
+    						strokeWidth: {2:1}
+    					},
+    					radius: {60:90},
+    					degree: -90,
+    					angle: 135,
+    					count: 6,
     					isRunLess: true,
-    					easing: mojs.easing.bezier(0, 1, 0.5, 1)
+    					easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
     				}),
     				// icon scale animation
     				new mojs.Tween({
-    					duration : 1500,
+    					duration : 1000,
     					onUpdate: function(progress) {
-    						if(progress > 0.3) {
-    							var elasticOutProgress = mojs.easing.elastic.out(1.43*progress-0.43);
-    							el9span.style.WebkitTransform = el9span.style.transform =
-                    'scale3d(' + elasticOutProgress + ',' + elasticOutProgress +
-                    ',1) rotate3d(0,0,1,' + 90*(1-elasticOutProgress) + 'deg)';
-    						}
-    						else {
-    							el9span.style.WebkitTransform = el9span.style.transform = 'scale3d(0,0,1)';
-    						}
+    						var elasticOutProgress = mojs.easing.elastic.out(progress);
+    						elspan.style.WebkitTransform = elspan.style.transform = 'translate3d(' + -50*(1-elasticOutProgress) + '%,0,0)';
     					}
     				})
     			],
     			onCheck : function() {
     				delement.style.color = '#988ADE';
+            // timeout and uncheck
     			},
     			onUnCheck : function() {
     				delement.style.color = '#C0C1C3';
