@@ -28,7 +28,10 @@
 html, body {
   background-image: url("/assets/images/school.png");
   background-repeat: repeat;
+}
 
+.content {
+  min-height: 80%;
 }
 
 // Component styles are injected through grunt
