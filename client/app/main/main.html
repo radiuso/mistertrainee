@@ -33,7 +33,7 @@
         <span class="md-subhead" ng-if="item.vote >= 180 && item.vote < 250">Trainee God</span>
         <span class="md-subhead" ng-if="item.vote >= 250">Trainee Michalet</span>
       </md-card-header-text>
-      <md-card-avatar ng-show="main.Auth.isAuthenticated()">
+      <md-card-avatar ng-show="main.Auth.isLoggedIn()">
         <rd-thumbs-up on-check="main.vote(item)" stroke-color="'#2C7ECC'" class="md-icon-button vote-for"></rd-thumbs-up>
       </md-card-avatar>
       <span class="md-subhead v-align-center">{{item.vote}}</span>
