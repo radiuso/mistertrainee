@@ -12,6 +12,11 @@ angular.module('mtApp')
             resolve(value);
           });
         });
+      },
+      on: function(eventName, fct) {
+        $rootScope.$on(eventName, function(event, value) {
+          fct(value);
+        });
       }
     };
   });

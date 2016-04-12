@@ -26,6 +26,7 @@ class SignupController {
       .then(() => {
         // Account created, redirect to home
         mtEvents.emmit('signup');
+        this.user = {};
         this.$state.go('main');
       })
       .catch(err => {

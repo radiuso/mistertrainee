@@ -16,11 +16,12 @@ class NavbarController {
     this.getCurrentUser = Auth.getCurrentUser;
     this.$mdSidenav = $mdSidenav;
 
-    mtEvents.once('login').then(() => {
-      this.closeLoginSidenav();
+    var vm = this;
+    mtEvents.on('login', function() {
+      vm.closeLoginSidenav();
     });
-    mtEvents.once('signup').then(() => {
-      this.closeSignUpSidenav();
+    mtEvents.on('signup', function() {
+      vm.closeSignUpSidenav();
     });
   }
 
