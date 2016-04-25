@@ -23,8 +23,9 @@
   </md-content>
 </md-sidenav>
 
-<md-toolbar>
-  <div class="md-toolbar-tools bg-color-blue-grey-900">
+<md-toolbar class="bg-transparent">
+  <div class="md-toolbar-tools">
+    <a ui-sref="main" class="title text-md">Mister trainee</a>
     <md-button ng-repeat="item in nav.menu" ui-sref="{{item.state}}">
       {{item.title}}
     </md-button>

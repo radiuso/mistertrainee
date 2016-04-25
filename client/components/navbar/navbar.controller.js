@@ -2,10 +2,7 @@
 
 class NavbarController {
   //start-non-standard
-  menu = [{
-    'title': 'Mister Trainee',
-    'state': 'main'
-  }];
+  menu = [];
 
   isCollapsed = true;
   //end-non-standard

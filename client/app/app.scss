@@ -34,6 +34,30 @@ html, body {
   min-height: 80%;
 }
 
+header {
+  height: 256px;
+  // padding: 115px 16px 0;
+}
+
+.page-content {
+  width: 85%;
+  min-height: 80%;
+  margin: 0 auto;
+  margin-top: -10%;
+}
+
+@font-face {
+  font-family: 'master_of_break';
+  src: url('/assets/fonts/master_of_break/master_of_break.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  font-family: "master_of_break", Times, serif;
+  text-align: center;
+}
+
 // Component styles are injected through grunt
 // injector
 @import '_utils.scss';
