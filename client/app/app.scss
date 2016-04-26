@@ -43,7 +43,7 @@ header {
   width: 85%;
   min-height: 80%;
   margin: 0 auto;
-  margin-top: -10%;
+  margin-top: -8%;
 }
 
 @font-face {
@@ -69,4 +69,5 @@ header {
 @import '../components/animocons/animocons.scss';
 @import '../components/animocons/rd-thumbs-up/rd-thumbs-up.scss';
 @import '../components/footer/footer.scss';
+@import '../components/navbar/_navbar.scss';
 // endinjector

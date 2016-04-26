@@ -5,7 +5,7 @@
 </div>
 
 <md-content class='md-center hidden-flow' layout="row" layout-wrap layout-align="center center">
-  <md-card flex="25" flex-xs="100" flex-sm="45" flex-md="30" ng-repeat="item in main.trainees | orderBy : 'vote' : true"
+  <md-card flex="100" ng-repeat="item in main.trainees | orderBy : 'vote' : true"
     ng-class="{
       'bg-color-blue-50': item.vote < 10,
       'bg-color-blue-100': item.vote >= 10,
