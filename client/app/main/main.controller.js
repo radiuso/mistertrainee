@@ -4,7 +4,7 @@
 
 class MainController {
 
-  constructor(Auth, Trainees, Votes, mtImgLetter, $mdToast, mtEvents) {
+  constructor(Auth, Trainees, Votes, mtImgLetter, $mdToast, mtEvents, socket, $scope) {
     this.Auth = Auth;
     this.Votes = Votes;
     this.imgProxy = mtImgLetter;
@@ -14,6 +14,12 @@ class MainController {
     this.trainees = [];
     Trainees.query().$promise.then(response => {
       this.trainees = response;
+
+      socket.syncUpdates('trainee', this.trainees);
+    });
+
+    $scope.$on('$destroy', function() {
+      socket.unsyncUpdates('trainee');
     });
 
     if(Auth.getCurrentUser().$promise) {
@@ -40,7 +46,7 @@ class MainController {
     this.Auth.getCurrentUser().$promise.then((user) => {
       this.Votes.up(trainee, user)
         .then(() => { this.handleVoteSuccess(); })
-        .catch(() => { this.handleVoteFailed(); });
+        .catch((res) => { this.handleVoteFailed(res); });
     });
   }
 
@@ -48,18 +54,28 @@ class MainController {
     this.Auth.getCurrentUser().$promise.then((user) => {
       this.Votes.down(trainee, user)
         .then(() => { this.handleVoteSuccess(); })
-        .catch(() => { this.handleVoteFailed(); });
+        .catch((res) => { this.handleVoteFailed(res); });
     });
   }
 
   handleVoteSuccess() {
     this.nbActions--;
   }
-  handleVoteFailed() {
-    this.toast.show(
-      this.toast.simple()
-        .textContent('No action left mother fucker!')
-    );
+  
+  handleVoteFailed(res) {
+    switch (res.status) {
+      case 423:
+        this.toast.show(
+          this.toast.simple()
+            .textContent('No action left mother fucker!')
+        );
+        break;
+      default:
+        this.toast.show(
+          this.toast.simple()
+            .textContent('An error occured')
+        );
+    }
   }
 }
 

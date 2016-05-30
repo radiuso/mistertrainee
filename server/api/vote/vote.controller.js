@@ -157,8 +157,8 @@ export function create(req, res) {
         });
       }
     })
-    .then(function(vote) {
-      if(vote) {
+    .then(function(voteEntity) {
+      if(voteEntity) {
         trainee.vote = trainee.vote + vote;
 
         delete trainee._id;
