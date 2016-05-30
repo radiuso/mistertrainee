@@ -1,7 +1,8 @@
 <br/>
 <div flex-xs layout="column" layout-align="center center">
   <img class="title-img" src="/assets/images/panda_mouse.jpg"/>
-  <h1 class="title">Mister trainee</h1>
+  <h3 ng-if="main.nbActions > 0">You have {{main.nbActions}} actions left</h3>
+  <h3 ng-if="main.nbActions == 0">No action left</h3>
 </div>
 
 <md-content class='md-center hidden-flow' layout="row" layout-wrap layout-align="center center">
@@ -34,9 +35,15 @@
         <span class="md-subhead" ng-if="item.vote >= 250">Trainee Michalet</span>
       </md-card-header-text>
       <md-card-avatar ng-show="main.Auth.isLoggedIn()">
-        <rd-thumbs-up on-check="main.vote(item)" stroke-color="'#2C7ECC'" class="md-icon-button vote-for"></rd-thumbs-up>
+        <rd-thumbs-up on-check="main.voteUp(item)" stroke-color="'#2C7ECC'" class="md-icon-button vote-for"></rd-thumbs-up>
       </md-card-avatar>
-      <span class="md-subhead v-align-center">{{item.vote}}</span>
+      <md-card-avatar ng-show="main.Auth.isLoggedIn()">
+        <rd-thumbs-down on-check="main.voteDown(item)" stroke-color="'#2C7ECC'" class="md-icon-button vote-down"></rd-thumbs-down>
+      </md-card-avatar>
+
+      <span class="separator"></span>
+
+      <span class="md-subhead v-align-center mt-vote-count">{{item.vote}}</span>
     </md-card-header>
     </div>
   </md-card>

@@ -4,6 +4,23 @@
   border-radius: 50%;
 }
 
-.vote-for .fa {
+.vote-for .fa,
+.vote-down .fa {
   font-size: 40px;
+}
+
+.vote-for .fa:before {
+  color: material-color('green', '500');
+}
+.vote-down .fa:before {
+  color: material-color('red', '500');
+}
+
+.mt-vote-count, .separator {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.separator {
+  width: 2rem;
 }

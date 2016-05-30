@@ -1,7 +1,4 @@
 'use strict';
-// import sqldb from '../../sqldb';
-// var User = sqldb.User;
-// var Trainee = sqldb.Trainee;
 
 export default function(sequelize, DataTypes) {
   var Vote = sequelize.define('Vote', {
@@ -11,11 +8,12 @@ export default function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    increment: DataTypes.INTEGER
+    increment: DataTypes.INTEGER,
+    date: DataTypes.DATEONLY
   });
 
-  //Vote.hasOne(User);
-  //Vote.hasOne(Trainee);
+  Vote.belongsTo(sequelize.import('../user/user.model'), {as: 'user'});
+  Vote.belongsTo(sequelize.import('../trainee/trainee.model'), {as: 'trainee'});
 
   return Vote;
 }

@@ -13,7 +13,7 @@ angular.module('mtApp', [
   'ngResource',
   'ngMaterial'
 ])
-  .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
+  .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider, $compileProvider) {
     $urlRouterProvider
       .otherwise('/');
 
@@ -21,4 +21,6 @@ angular.module('mtApp', [
 
     $mdThemingProvider.theme('default')
       .accentPalette('red');
+      
+    $compileProvider.debugInfoEnabled(false);
   });

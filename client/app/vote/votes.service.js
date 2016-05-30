@@ -1,15 +1,30 @@
 'use strict';
 
 angular.module('mtApp')
-  .service('Votes', function (Trainees) {
+  .service('Votes', function (Trainees, $http) {
     return {
-      increment: function(trainee, user) {
-        trainee.vote = _.isNil(trainee.vote) ? 1 : trainee.vote + 1;
-        Trainees.update({ id:trainee._id }, trainee);
+      create: function(trainee, user, vote) {
+        return $http({
+          method:'POST',
+          url:'/api/votes',
+          data: {
+            trainee: trainee,
+            user: user,
+            vote: vote
+          }
+        });
       },
-      decrement: function(trainee, user) {
-        trainee.vote = trainee.vote - 1;
-        Trainees.update({ id:trainee._id }, trainee);
+      up: function(trainee, user) {
+        return this.create(trainee, user, 1);
+      },
+      down: function(trainee, user) {
+        return this.create(trainee, user, -1);
+      },
+      getTodays: function(user) {
+        return $http({
+          method: 'GET',
+          url: '/api/votes/user/' + user._id
+        });
       }
     }
   });
